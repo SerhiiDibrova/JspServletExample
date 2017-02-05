@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login web . . . </title>
+
+<script type="text/javascript" >
+function carga(){
+ document.getElementById("login").focus();
+ 
+}
+function valideDatos() {
+	var login =  document.getElementById("login");
+	var password =  document.getElementById("password");
+	
+	if ( (login.value == "" || login.value == '' || login.value == null) &&
+			(password.value == "" || password.value == '' || password.value == null)){
+		alert("Enter your username and password");
+		login.focus();
+		return false;
+	}else if(login.value == "" || login.value == '' || login.value == null){
+		alert("Enter your username");
+		login.focus();
+		return false;
+	}else if (password.value == "" || password.value == '' || password.value == null){
+		alert("Enter your password");
+		password.focus();
+		return false;
+	}else{
+		return true;
+	}
+}
+
+</script>
+
+</head>
+<body onload="carga();">
+
+<p>HTML</p>
+<p>CSS</p>
+<p>JavaScript</p>
+<p>JSPS</p>
+<p>Servlets</p>
+
+
+
+<form action="loginWeb.jr" method="POST" onsubmit="return valideDatos();" >
+
+<table align="center" >
+<tr>
+<td colspan="2" style="font-weight: bold;style="font-weight: bold;size: 20px;"align="right">Sign in</td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;size: 12px;color: blue;"align="right">Login:</td>
+<td><input type="text" name="login" id="login"></td>
+</tr>
+
+<tr>
+<td style="font-weight: bold;size: 12px;color: blue;"align="right">Password:</td>
+<td><input type="password" name="password" id="password"></td>
+</tr>
+
+<tr>
+<td><input type="button" value="Cancel" style="font-size: 14px;color: blue; "onclick=" window.close();"  ></td>
+<td><input type="submit" value="Accept" style="font-size: 14px;color: blue;" ></td>
+</tr>
+</table>
+
+
+</form>
+
+</body>
+</html>
